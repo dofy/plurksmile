@@ -137,7 +137,7 @@ function bindEvent()
 
     $('#phpzOrgPlurkSmileContent > div > img').click(function()
     {
-        phpzOrgPlurkSmileCurInput.val(phpzOrgPlurkSmileCurInput.val() + this.src);
+        phpzOrgPlurkSmileCurInput.val(phpzOrgPlurkSmileCurInput.val() + ' ' + this.src + ' ');
     });
 
     if(phpzOrgPlurkSmileState == 'user')
