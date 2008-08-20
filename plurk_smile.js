@@ -155,7 +155,8 @@ function bindEvent()
 	{
 		$('#phpzOrgPlurkSmileContent > ul > li').css('background-color','#ffc');
 		var ref = $(this).css('background-color','#cf0').attr('ref');
-		$('#phpzOrgPlurkSmileContent > div').hide().eq(ref).show();
+		$('#phpzOrgPlurkSmileContent > div').hide();
+        $('#phpzOrgPlurkSmileImageList_'+ref).show();
 	}).eq(0).click();
 }
 // -----------------------------
@@ -164,7 +165,7 @@ function bindEvent()
 function addTab(id, data)
 {
 	$('#phpzOrgPlurkSmileContent > ul').append('<li ref="'+id+'">'+data[0]+'</li>');
-	addImages($('<div></div>').appendTo('#phpzOrgPlurkSmileContent').hide(), data);
+	addImages($('<div id="phpzOrgPlurkSmileImageList_'+id+'"></div>').appendTo('#phpzOrgPlurkSmileContent').hide(), data);
 }
 function addImages(obj, data)
 {
