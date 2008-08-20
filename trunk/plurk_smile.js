@@ -95,8 +95,8 @@ function initCSS()
 	{
         'color': 'green',
 		'float': 'left',
-		'margin': '0 2px',
-		'padding': '3px 7px',
+		'margin': 0,
+		'padding': '3px',
 		'background-color': '#ffc',
 		'cursor': 'pointer'
 	});
@@ -104,18 +104,20 @@ function initCSS()
 	{
 		'margin': 0,
 		'padding': '3px',
-		'background-color': '#cf0',
+		'border': '3px solid #cf0',
+		'background-color': '#efa',
 		'clear': 'both',
-		'width': '300px',
-		'height': '150px',
+		'width': '338px',
+		'height': '140px',
 		'overflow': 'auto'
 	})
 	.children('img').css(
 	{
 		'margin': '1px',
 		'padding': 0,
+		'background-color': '#fff',
 		'border': '1px solid #036',
-		'width': '27px',
+		'width': '32px',
 		'cursor': 'pointer'
 	});
     moveToObj(phpzOrgPlurkSmileState == 'user' ? $('#timeline_holder') : $('#reply_box'));
