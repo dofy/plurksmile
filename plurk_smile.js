@@ -179,7 +179,7 @@ function bindEvent()
         phpzOrgPlurkSmileCurInput = $('#input_permalink');
     }
     // tabs
-	$('#phpzOrgPlurkSmileContent > ul > li').click(function()
+	$('#phpzOrgPlurkSmileContent > ul > li').mouseover(function()
 	{
 		$('#phpzOrgPlurkSmileContent > ul > li').css('background-color','#ffc');
 		var ref = $(this).css('background-color','#cf0').attr('ref');
