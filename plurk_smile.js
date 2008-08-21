@@ -75,7 +75,7 @@ $(function()
     phpzOrgPlurkSmileState = location.href.split('/')[3];
 	// init dom
 	$('body').append('<div id="phpzOrgPlurkSmile">' +
-		'<a href="javascript:void 0;">Show Smile &gt;</a>' + 
+		'<span>Plurk Smile</span>' + 
 		'<div id="phpzOrgPlurkSmileContent"><ul></ul></div>' +
 		'</div>');
 	// init tabs
@@ -93,6 +93,7 @@ function initCSS()
 {
 	$('#phpzOrgPlurkSmile').css(
 	{
+        'color': 'green',
         'background': '#ffc',
         'border-top': '4px solid #f90',
 		'margin': 0,
@@ -101,7 +102,7 @@ function initCSS()
 		'position': 'absolute',
         'z-index': 10000
 	})
-	.children('#phpzOrgPlurkSmileContent').css(
+    .children('#phpzOrgPlurkSmileContent').css(
 	{
 		'display': 'none',
 		'margin': 0,
@@ -147,18 +148,20 @@ function initCSS()
 function bindEvent()
 {
     // drag
-    $('#phpzOrgPlurkSmile').draggable();
-    // show & hide
-	$('#phpzOrgPlurkSmile a').toggle(function()
+    $('#phpzOrgPlurkSmile')
+    .draggable()
+    .hover(function()
 	{
-		$(this).html('Hide Smile &lt;');
-		$('#phpzOrgPlurkSmileContent').slideDown();
+        $(this)
+            .children('span').hide()
+            .next('div').show();
 	},
 	function()
 	{
-		$(this).html('Show Smile &gt;');
-		$('#phpzOrgPlurkSmileContent').slideUp();
-	}).css({'float':'left','margin':'0 5px'});
+        $(this)
+            .children('span').show()
+            .next('div').hide();
+	});
     // insert smile
     $('#phpzOrgPlurkSmileContent > div > img').click(function()
     {
