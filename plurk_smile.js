@@ -46,6 +46,28 @@ phpzOrgPlurkSmileData.push([
 ]
 ]);
 
+phpzOrgPlurkSmileData.push([
+	'Buttery',
+	'http://ipx6.cn/plotion/Buttery/',
+	[
+		'bu1.png','bu2.png','bu3.png','bu4.png','bu5.png','bu6.png','bu7.png','bu8.png','bu9.png',
+		'bu10.png','bu11.png','bu12.png','bu13.png','bu14.png','bu15.png','bu16.png','bu17.png',
+		'bu18.png','bu19.png','bu20.png'
+	]
+]);
+
+phpzOrgPlurkSmileData.push([
+	'Blacky',
+	'http://ipx6.cn/plotion/Blacky/',
+	[
+		'bl1.png','bl2.png','bl3.png','bl4.png','bl5.png','bl6.png','bl7.png','bl8.png','bl9.png',
+		'bl10.png','bl11.png','bl12.png','bl13.png','bl14.png','bl15.png','bl16.png','bl17.png',
+		'bl18.png','bl19.png','bl20.png','bl21.png','bl22.png','bl23.png','bl24.png','bl25.png',
+		'bl26.png','bl27.png','bl28.png','bl29.png','bl30.png'
+	]
+]);
+
+
 var phpzOrgPlurkSmileCurInput = null;
 var phpzOrgPlurkSmileState = null;
 $(function()
@@ -124,8 +146,9 @@ function initCSS()
 }
 function bindEvent()
 {
+    // drag
     $('#phpzOrgPlurkSmile').draggable();
-
+    // show & hide
 	$('#phpzOrgPlurkSmile a').toggle(function()
 	{
 		$(this).html('Hide Smile &lt;');
@@ -136,12 +159,12 @@ function bindEvent()
 		$(this).html('Show Smile &gt;');
 		$('#phpzOrgPlurkSmileContent').slideUp();
 	}).css({'float':'left','margin':'0 5px'});
-
+    // insert smile
     $('#phpzOrgPlurkSmileContent > div > img').click(function()
     {
         phpzOrgPlurkSmileCurInput.val(phpzOrgPlurkSmileCurInput.val() + ' ' + this.src + ' ');
     });
-
+    // get input box and position
     if(phpzOrgPlurkSmileState == 'user')
     {
         phpzOrgPlurkSmileCurInput = $('#input_big');
@@ -152,13 +175,12 @@ function bindEvent()
     {
         phpzOrgPlurkSmileCurInput = $('#input_permalink');
     }
-
+    // tabs
 	$('#phpzOrgPlurkSmileContent > ul > li').click(function()
 	{
 		$('#phpzOrgPlurkSmileContent > ul > li').css('background-color','#ffc');
 		var ref = $(this).css('background-color','#cf0').attr('ref');
-		$('#phpzOrgPlurkSmileContent > div').hide();
-        $('#phpzOrgPlurkSmileImageList_'+ref).show();
+		$('#phpzOrgPlurkSmileContent > div').hide().eq(parseInt(ref)).show();
 	}).eq(0).click();
 }
 // -----------------------------
@@ -167,7 +189,7 @@ function bindEvent()
 function addTab(id, data)
 {
 	$('#phpzOrgPlurkSmileContent > ul').append('<li ref="'+id+'">'+data[0]+'</li>');
-	addImages($('<div id="phpzOrgPlurkSmileImageList_'+id+'"></div>').appendTo('#phpzOrgPlurkSmileContent').hide(), data);
+	addImages($('<div></div>').appendTo('#phpzOrgPlurkSmileContent').hide(), data);
 }
 function addImages(obj, data)
 {
