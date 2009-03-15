@@ -105,6 +105,16 @@ smileData.push([
 ]);
 
 smileData.push([
+	'B&amp;T',
+	'http://plurksmile.googlecode.com/svn/trunk/images/b_t/',
+	[
+		'01.gif','02.gif','03.gif','04.gif','05.gif','06.gif','07.gif','08.gif','09.gif','10.gif',
+        '11.gif','12.gif','13.gif','14.gif','15.gif','16.gif','17.gif','18.gif','19.gif','20.gif',
+        '21.gif','22.gif','23.gif','24.gif'
+	]
+]);
+
+smileData.push([
 	'Google',
 	'https://mail.google.com/mail/e/',
 	[
