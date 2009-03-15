@@ -2,7 +2,7 @@
 // @name           Plurk Smile
 // @namespace      http://phpz.org/
 // @description    Easy to insert custom smile.
-// @version        4.6.5
+// @version        4.6.6
 // @include        http://www.plurk.com/*
 // ==/UserScript==
 
@@ -49,7 +49,7 @@ smileData.push([
         'r74.gif','r75.gif','r76.gif','r77.gif','r78.gif'
     ]
 ]);
-/*
+
 smileData.push([
 	'香蕉',
 	'http://plurksmile.googlecode.com/svn/trunk/images/banana/',
@@ -76,7 +76,7 @@ smileData.push([
         'ba154.gif','ba155.gif','ba156.gif'
 	]
 ]);
-*/
+
 smileData.push([
 	'悠嘻猴',
 	'http://plurksmile.googlecode.com/svn/trunk/images/monkey/',
